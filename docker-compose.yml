@@ -3,10 +3,11 @@ services:
   master:
     build: .
     environment:
-      - WALE_S3_PREFIX=s3://
+      - WALE_S3_PREFIX=
       - AWS_ACCESS_KEY_ID=
       - AWS_SECRET_ACCESS_KEY=
-      - AWS_REGION=ap-northeast-1
+      - AWS_REGION=
+      - AWS_ENDPOINT=
       - POSTGRES_PASSWORD=
     volumes:
       - ./data/master:/var/lib/postgresql/data
