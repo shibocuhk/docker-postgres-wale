@@ -3,8 +3,12 @@ services:
   master:
     build: .
     environment:
-      - WALE_AWS_ACCESS_KEY_ID=
-      - WALE_AWS_SECRET_ACCESS_KEY=
-      - WALE_S3_ENDPOINT=https+path://
+      - WALE_S3_PREFIX=s3://
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
+      - AWS_REGION=ap-northeast-1
+      - POSTGRES_PASSWORD=
     volumes:
       - ./data/master:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
